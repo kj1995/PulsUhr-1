@@ -31,6 +31,7 @@ public class MeasurePulsFragment extends Fragment implements View.OnClickListene
         graph.addSeries(dataPoints);
         Button b = (Button) myView.findViewById(R.id.btnStartMeasurement);
         b.setOnClickListener(this);
+        PulsUhr pulsUhr = new PulsUhr(getActivity(), "98:D3:31:90:41:88");
       /*  LineGraphSeries<DataPoint> series = new LineGraphSeries<DataPoint>(new DataPoint[] {
                 new DataPoint(0, 1),
                 new DataPoint(1, 5),
@@ -40,13 +41,6 @@ public class MeasurePulsFragment extends Fragment implements View.OnClickListene
         });
         graph.addSeries(series); */
         return myView;
-    }
-
-    @Override
-    public void onCreate(Bundle savedInstanceState) {
-        super.onCreate(savedInstanceState);
-        PulsUhr pulsUhr = new PulsUhr(getActivity(), "98:D3:31:90:41:88");
-        pulsUhr.connect();
     }
 
 
@@ -60,6 +54,7 @@ public class MeasurePulsFragment extends Fragment implements View.OnClickListene
         switch (v.getId())
         {
             case R.id.btnStartMeasurement:
+                pulsUhr.connect();
                 pulsUhr.startMeasurement();
                 break;
         }

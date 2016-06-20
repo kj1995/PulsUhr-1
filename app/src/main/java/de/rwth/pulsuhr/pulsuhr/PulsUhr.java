@@ -291,6 +291,7 @@ public class PulsUhr {
                 write((byte)0x0f);
             }
             started = false;
+            //test Comment
         }
 
         /* Call this from the main activity to shutdown the connection */

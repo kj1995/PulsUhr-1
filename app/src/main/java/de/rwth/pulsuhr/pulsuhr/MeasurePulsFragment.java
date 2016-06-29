@@ -43,7 +43,7 @@ public class MeasurePulsFragment extends Fragment implements View.OnClickListene
         return myView;
     }
 
-
+    //test
     public void addDataPoint(int receivedPoint)
     {
         LastXValue++;

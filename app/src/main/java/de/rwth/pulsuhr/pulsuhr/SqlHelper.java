@@ -11,10 +11,12 @@ public class SqlHelper extends SQLiteOpenHelper {
 
     public static final int DATABASE_VERSION = 1;
     public static final String DATABASE_NAME = "PulsUhrData.db";
-    public static final String SQL_CREATE_ENTRIES = "CREATE TABLE Data (Timestamp INTEGER PRIMARY KEY, Measurement BLOB, Puls INTEGER, Comment TEXT, Ranking INTEGER)";
+    public static final String SQL_CREATE_ENTRIES = "CREATE TABLE Daten (Timestamp INTEGER PRIMARY KEY, Measurement BLOB, Puls INTEGER, Comment TEXT, Ranking INTEGER)";
+    public static final String SQL_DELETE_ENTRIES = "DROP TABLE IF EXISTS Daten";
 
     public SqlHelper(Context context) {
         super(context, DATABASE_NAME, null, DATABASE_VERSION);
+        SQLiteDatabase db = this.getWritableDatabase();
     }
 
     public void onCreate(SQLiteDatabase db) {
@@ -24,7 +26,7 @@ public class SqlHelper extends SQLiteOpenHelper {
     public void onUpgrade(SQLiteDatabase db, int oldVersion, int newVersion) {
         // This database is only a cache for online data, so its upgrade policy is
         // to simply to discard the data and start over
-       // db.execSQL(SQL_DELETE_ENTRIES);
-        //onCreate(db);
+        db.execSQL(SQL_DELETE_ENTRIES);
+        onCreate(db);
     }
 }

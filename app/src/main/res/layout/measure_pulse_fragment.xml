@@ -20,5 +20,35 @@
             android:layout_centerHorizontal="true"
             android:layout_marginTop="50dp" />
 
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Wie fühlen Sie sich gerade ?"
+            android:id="@+id/tvInformation"
+            android:layout_below="@id/btnStartMeasurement"
+            android:layout_centerHorizontal="true"
+            android:layout_marginTop="30dp"
+            android:longClickable="true"
+            android:textSize="25dp" />
+
+        <RatingBar
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/ratingBar"
+            android:layout_alignTop="@+id/tvInformation"
+            android:layout_centerHorizontal="true"
+            android:layout_marginTop="30dp"
+            android:backgroundTint="#2c954a" />
+
+        <EditText
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:inputType="textMultiLine"
+            android:ems="10"
+            android:id="@+id/editText"
+            android:layout_centerHorizontal="true"
+            android:layout_marginTop="50dp"
+            android:layout_alignTop="@+id/ratingBar"
+            android:hint="Kommentar" />
     </RelativeLayout>
 </ScrollView>

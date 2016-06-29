@@ -4,19 +4,19 @@
     <group android:checkableBehavior="single">
         <item
             android:id="@+id/nav_home_fragment"
-            android:icon="@drawable/ic_menu_camera"
+            android:icon="@drawable/di7o9er6t"
             android:title="Home" />
         <item
-            android:id="@+id/nav_measure_pulse_fragment"
-            android:icon="@drawable/ic_menu_camera"
+            android:id="@+id/nav_messung"
+            android:icon="@drawable/heart_copy_14109506674nkg8"
             android:title="Puls messen" />
         <item
-            android:id="@+id/nav_pulse_history"
-            android:icon="@drawable/ic_menu_gallery"
-            android:title="Puls history" />
+            android:id="@+id/nav_db"
+            android:icon="@drawable/database"
+            android:title="Puls Historie" />
         <item
-            android:id="@+id/nav_settings_fragment"
-            android:icon="@drawable/ic_menu_slideshow"
-            android:title="Settings" />
+            android:id="@+id/nav_setting"
+            android:icon="@drawable/settings_l_icon"
+            android:title="Einstellungen" />
     </group>
 </menu>

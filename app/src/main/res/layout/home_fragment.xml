@@ -5,15 +5,49 @@
     <RelativeLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Willkommen !"
+            android:id="@+id/welcome_view"
+            android:layout_alignParentTop="true"
+            android:layout_centerHorizontal="true"
+            android:layout_marginTop="57dp"
+            android:textSize="40dp"
+            android:textColor="#56c695" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/information_main"
+            android:id="@+id/info_view"
+            android:layout_marginTop="63dp"
+            android:textSize="20dp"
+            android:layout_below="@+id/welcome_view"
+            android:singleLine="false"
+            android:layout_marginLeft="60dp"
+            android:layout_marginRight="60dp" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textAppearance="?android:attr/textAppearanceLarge"
+            android:text="Viel Spaß !"
+            android:id="@+id/textView2"
+            android:layout_marginTop="31dp"
+            android:textColor="#56c695"
+            android:layout_below="@+id/info_view"
+            android:layout_centerHorizontal="true" />
+
         <!-- Buttons sind nur zum testen, werden später gelöscht -->
         <Button
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="Connect"
             android:id="@+id/btnConnect"
-            android:layout_alignParentTop="true"
-            android:layout_centerHorizontal="true"
-            android:layout_marginTop="77dp" />
+            android:layout_below="@+id/textView2"
+            android:layout_centerHorizontal="true" />
 
         <Button
             android:layout_width="wrap_content"

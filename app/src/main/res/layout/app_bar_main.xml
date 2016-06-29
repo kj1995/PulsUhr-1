@@ -23,4 +23,14 @@
 
     <include layout="@layout/content_main" />
 
+    <android.support.design.widget.FloatingActionButton
+        android:id="@+id/fab"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="bottom|end"
+        android:layout_margin="@dimen/fab_margin"
+        android:src="@drawable/icon_plus_512"
+        app:backgroundTint="#49c46f"
+        android:tint="#84ffd6" />
+
 </android.support.design.widget.CoordinatorLayout>

@@ -25,8 +25,21 @@ public class MainActivity extends AppCompatActivity
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
+        SqlHelper myDB = new SqlHelper(this);
+
         Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
+
+        //Implements floating action button
+        FloatingActionButton fab = (FloatingActionButton) findViewById(R.id.fab);
+        fab.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                MeasurePulsFragment fragment = new MeasurePulsFragment();
+                FragmentManager fragmentManager = getFragmentManager();
+                fragmentManager.beginTransaction().replace(R.id.content_frame, fragment).commit();
+            }
+        });
 
         DrawerLayout drawer = (DrawerLayout) findViewById(R.id.drawer_layout);
         ActionBarDrawerToggle toggle = new ActionBarDrawerToggle(
@@ -81,13 +94,13 @@ public class MainActivity extends AppCompatActivity
         if (id == R.id.nav_home_fragment) {
             //open Home screen
             fragmentManager.beginTransaction().replace(R.id.content_frame, new HomeFragment()).commit();
-        } else if (id == R.id.nav_measure_pulse_fragment) {
+        } else if (id == R.id.nav_messung) {
             //open measure pulse screen
             fragmentManager.beginTransaction().replace(R.id.content_frame, new MeasurePulsFragment(), "MeasurePulse").commit();
-        } else if (id == R.id.nav_pulse_history) {
+        } else if (id == R.id.nav_db) {
             //open pulse history screen
             fragmentManager.beginTransaction().replace(R.id.content_frame, new PulsHistoryFragment()).commit();
-        } else if(id == R.id.nav_settings_fragment){
+        } else if(id == R.id.nav_setting){
             //open settings screen
             fragmentManager.beginTransaction().replace(R.id.content_frame, new SettingsFragment()).commit();
         }
@@ -96,4 +109,6 @@ public class MainActivity extends AppCompatActivity
         drawer.closeDrawer(GravityCompat.START);
         return true;
     }
+
+
 }

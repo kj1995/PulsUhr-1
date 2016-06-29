@@ -32,14 +32,14 @@ public class MeasurePulsFragment extends Fragment implements View.OnClickListene
         Button b = (Button) myView.findViewById(R.id.btnStartMeasurement);
         b.setOnClickListener(this);
         PulsUhr pulsUhr = new PulsUhr(getActivity(), "98:D3:31:90:41:88");
-      /*  LineGraphSeries<DataPoint> series = new LineGraphSeries<DataPoint>(new DataPoint[] {
+        LineGraphSeries<DataPoint> series = new LineGraphSeries<DataPoint>(new DataPoint[] {
                 new DataPoint(0, 1),
                 new DataPoint(1, 5),
                 new DataPoint(2, 3),
                 new DataPoint(3, 2),
                 new DataPoint(4, 6)
         });
-        graph.addSeries(series); */
+        graph.addSeries(series);
         return myView;
     }
 

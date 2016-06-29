@@ -3,6 +3,8 @@
 
     <string name="navigation_drawer_open">Open navigation drawer</string>
     <string name="navigation_drawer_close">Close navigation drawer</string>
+    <string name="information_main">Danke ,dass Sie sich für unsere App entschieden haben. <b>Pulsoximetrie</b> hilft Ihnen Ihren Puls mittels Pulsoximetrie zu messen und grafisch auszugeben. Ihre Ergebnisse werden in einer Datenbank gespeichert und stehen Ihnen stets zu Verfügung !</string>
+
 
     <string name="action_settings">Settings</string>
 

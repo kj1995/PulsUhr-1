@@ -41,7 +41,6 @@ public class PulsUhr {
 
     public PulsUhr(Activity activity, String new_mac)
     {
-        //HIIIII
         mActivity = activity;
         mac = new_mac;
         context = activity.getBaseContext();

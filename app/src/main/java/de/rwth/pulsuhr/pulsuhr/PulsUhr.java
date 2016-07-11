@@ -48,7 +48,7 @@ public class PulsUhr {
         BluetoothAdapter adapter = BluetoothAdapter.getDefaultAdapter();
         if (adapter == null) {
             // Device does not support Bluetooth
-            Toast.makeText(activity.getApplicationContext(), "No Bluetooth Device Connected", Toast.LENGTH_LONG).show();
+            Toast.makeText(activity.getApplicationContext(), "No Bluetooth Device Connected", Toast.LENGTH_SHORT).show();
         }else
         {
             mBluetoothAdapter = adapter;

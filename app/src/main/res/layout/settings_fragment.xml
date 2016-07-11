@@ -14,7 +14,7 @@
             android:textSize="30dp"
             android:layout_marginTop="30dp"
             android:checked="false"
-            android:buttonTint="#0073ff"
+            android:buttonTint="#5fcd77"
             android:clickable="false"
             android:layout_centerHorizontal="true"/>
 
@@ -50,7 +50,7 @@
                 android:text="Profil 1 "
                 android:id="@+id/radioButton"
                 android:checked="false"
-                android:buttonTint="#0073ff" />
+                android:buttonTint="#5fcd77" />
 
             <RadioButton
                 android:layout_width="wrap_content"
@@ -58,7 +58,7 @@
                 android:text="Profil 2"
                 android:id="@+id/radioButton2"
                 android:checked="false"
-                android:buttonTint="#0073ff" />
+                android:buttonTint="#5fcd77" />
 
             <RadioButton
                 android:layout_width="wrap_content"
@@ -66,7 +66,7 @@
                 android:text="Profil 3"
                 android:id="@+id/radioButton3"
                 android:checked="false"
-                android:buttonTint="#0073ff" />
+                android:buttonTint="#5fcd77" />
 
         </RadioGroup>
 
@@ -78,6 +78,15 @@
             android:layout_below="@id/radiogroup"
             android:layout_centerHorizontal="true"
             android:layout_marginTop="30dp" />
+
+        <Button
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Datenbank zurücksetzen"
+            android:id="@+id/btnResetDB"
+            android:layout_below="@id/btnSave"
+            android:layout_centerHorizontal="true"
+            android:layout_marginTop="10dp" />
 
     </RelativeLayout>
 </ScrollView>

@@ -50,5 +50,15 @@
             android:layout_marginTop="50dp"
             android:layout_alignTop="@+id/ratingBar"
             android:hint="Kommentar" />
+
+        <Button
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Messung speichern"
+            android:id="@+id/btnSaveMeasurement"
+            android:layout_below="@id/editText"
+            android:layout_centerHorizontal="true"
+            android:layout_marginTop="50dp" />
+
     </RelativeLayout>
 </ScrollView>

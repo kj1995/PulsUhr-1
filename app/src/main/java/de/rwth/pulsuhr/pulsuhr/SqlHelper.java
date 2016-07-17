@@ -56,9 +56,17 @@ public class SqlHelper extends SQLiteOpenHelper {
         return res;
     }
 
-    public Integer deleteMeasurment(String position){
+    public Integer deleteMeasurement(String idType,String itemId){
         SQLiteDatabase db = this.getWritableDatabase();
-        return db.delete("Graphs",position,null);
+        if(itemId == null)
+        {
+            return db.delete("Graphs",null,null);
+        }
+        else
+        {
+            return db.delete("Graphs", idType, new String[] {itemId});
+        }
+
     }
 
 }

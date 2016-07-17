@@ -51,35 +51,27 @@ public class MeasurementViewAdapter extends RecyclerView.Adapter<MeasurementView
 
         Cursor cursor = myDB.showMeasurement();
         cursor.moveToPosition(position);
-        if (cursor.getCount() == 0) {
-            AlertDialog.Builder builder = new AlertDialog.Builder(appContext);
-            builder.setCancelable(true);
-            builder.setTitle("Achtung !");
-            builder.setMessage("Noch keine Messungen vorhanden !");
-            builder.show();
-        } else {
-            Log.d("Test","onBind... called "+position);
-            LastXValue = 0;
-            String dateAndTime = new SimpleDateFormat(" dd.MM.yyyy    HH.mm").format(new Timestamp(Long.valueOf(cursor.getString(0))));
-            dataPoints = new LineGraphSeries<DataPoint>();
-            holder.tvTimestamp.setText("Messung vom : " + dateAndTime);
-            holder.tvPulse.setText(cursor.getString(2));
-            holder.tvComment.setText(" " + cursor.getString(3) + "\n Bewertung : " + cursor.getString(4));
-            byte[] bMeasurement = cursor.getBlob(1);
-            int count;
-            for(count = 0; count < bMeasurement.length; count++){
-                int dp = (int) bMeasurement[count];
-                addDataPoint(dp);
-            }
-            holder.graph.addSeries(dataPoints);
-
+        Log.d("Rows","..."+cursor.getCount());
+        Log.d("Which is binding","onBind... called "+position);
+        LastXValue = 0;
+        String dateAndTime = new SimpleDateFormat(" dd.MM.yyyy    HH.mm").format(new Timestamp(Long.valueOf(cursor.getString(0))));
+        dataPoints = new LineGraphSeries<DataPoint>();
+        holder.tvTimestamp.setText("Messung vom : " + dateAndTime);
+        holder.tvPulse.setText(cursor.getString(2));
+        holder.tvComment.setText(" " + cursor.getString(3) + "\n Bewertung : " + cursor.getString(4));
+        byte[] bMeasurement = cursor.getBlob(1);
+        int count;
+        for(count = 0; count < bMeasurement.length; count++){
+            int dp = (int) bMeasurement[count];
+            addDataPoint(dp);
         }
+        holder.graph.addSeries(dataPoints);
     }
 
     @Override
     public int getItemCount() {
-
         Cursor cursor = myDB.showMeasurement();
+        Log.d("Rows","..."+cursor.getCount());
         return cursor.getCount();
 
     }
@@ -90,7 +82,9 @@ public class MeasurementViewAdapter extends RecyclerView.Adapter<MeasurementView
     }
 
     public void delete(int position){
-        myDB.deleteMeasurment(String.valueOf(position));
+        Cursor cursor = myDB.showMeasurement();
+        cursor.moveToPosition(position);
+        myDB.deleteMeasurement("Timestamp = ?",cursor.getString(0));
         notifyItemRemoved(position);
     }
 

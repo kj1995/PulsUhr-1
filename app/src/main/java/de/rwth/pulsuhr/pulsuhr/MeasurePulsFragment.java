@@ -44,15 +44,10 @@ public class MeasurePulsFragment extends Fragment implements View.OnClickListene
         //Graphview
         GraphView graph = (GraphView) myView.findViewById(R.id.graph);
         dataPoints = new LineGraphSeries<DataPoint>();
+        addDataPoint(1);addDataPoint(4);addDataPoint(4);addDataPoint(1);addDataPoint(1);addDataPoint(1);addDataPoint(6);
+        addDataPoint(4);addDataPoint(1);addDataPoint(1);addDataPoint(1);addDataPoint(3);addDataPoint(5);addDataPoint(4);
+        addDataPoint(1);addDataPoint(6);addDataPoint(1);addDataPoint(1);addDataPoint(1);addDataPoint(1);addDataPoint(1);
         graph.addSeries(dataPoints);
-        LineGraphSeries<DataPoint> series = new LineGraphSeries<DataPoint>(new DataPoint[] {
-                new DataPoint(0, 1),
-                new DataPoint(1, 5),
-                new DataPoint(2, 3),
-                new DataPoint(3, 2),
-                new DataPoint(4, 6)
-        });
-        graph.addSeries(series);
 
         return myView;
     }
@@ -75,7 +70,7 @@ public class MeasurePulsFragment extends Fragment implements View.OnClickListene
             case R.id.btnSaveMeasurement:
                 //test
                 final String Pulse = "180";
-                final String Measurement = "111111111";
+                final String Measurement = "1";
                 final EditText Comment = (EditText)myView.findViewById(R.id.editText);
                 final RatingBar bar = (RatingBar)myView.findViewById(R.id.ratingBar);
                 boolean isSuccessfull = myDB.addMeasurement(Measurement,Pulse,Comment.getText().toString(), ((float) bar.getRating()));

@@ -32,7 +32,7 @@ public class SettingsFragment extends Fragment implements View.OnClickListener{
         final SqlHelper myDB = new SqlHelper(getActivity());
         switch (v.getId()){
             case R.id.btnResetDB :
-                int succesful = myDB.deleteMeasurment();
+                int succesful = myDB.deleteMeasurment(null);
                 if(succesful > 0){
                     Toast.makeText(getActivity(),"Datenbank zurückgesetzt !",Toast.LENGTH_SHORT).show();
                 }

@@ -109,7 +109,7 @@ public class MeasurementViewAdapter extends RecyclerView.Adapter<MeasurementView
             graph = (GraphView) itemView.findViewById(R.id.listGraph);
             graph.setOnLongClickListener(this);
         }
-        //test
+
         @Override
         public boolean onLongClick(View v) {
             AlertDialog.Builder builder = new AlertDialog.Builder(appContext);

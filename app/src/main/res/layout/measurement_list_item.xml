@@ -1,0 +1,76 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content">
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/listTimestamp"
+        android:layout_centerHorizontal="false"
+        android:layout_marginTop="5dp"
+        android:longClickable="true"
+        android:padding="2dp"
+        android:text="18.12.1970 17:17"
+        android:textSize="20dp"
+        android:textColor="#000000"
+        android:textStyle="bold|italic" />
+
+
+
+    <com.jjoe64.graphview.GraphView
+        android:layout_below="@id/listTimestamp"
+        android:layout_width="wrap_content"
+        android:layout_height="200dp"
+        android:id="@+id/listGraph" />
+
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/listComment"
+        android:layout_below="@id/listGraph"
+        android:layout_centerHorizontal="false"
+        android:layout_marginTop="5dp"
+        android:longClickable="true"
+        android:padding="2dp"
+        android:text="Joggen gewesen. Kreislaufproblem. heißes wetter 4.0"
+        android:textSize="20dp"
+        android:textColor="#000000" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/listPulse"
+        android:layout_below="@id/listComment"
+        android:layout_toRightOf="@+id/textView"
+        android:padding="2dp"
+        android:longClickable="true"
+        android:textColor="#36a050"
+        android:text="100"
+        android:textSize="25dp" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text=" Puls : "
+        android:textColor="#36a050"
+        android:textSize="25dp"
+        android:padding="2dp"
+        android:id="@+id/textView"
+        android:layout_below="@+id/listComment"
+        android:layout_alignParentStart="true" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="_________________"
+        android:textColor="#918a8a"
+        android:textSize="35dp"
+        android:layout_centerHorizontal="true"
+        android:id="@+id/textView2"
+        android:layout_below="@+id/listComment"
+        android:layout_marginTop="20dp"
+        android:layout_alignParentStart="true" />
+
+</RelativeLayout>
